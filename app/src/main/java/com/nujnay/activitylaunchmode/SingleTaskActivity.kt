@@ -32,6 +32,13 @@ class SingleTaskActivity : Activity() {
         }
         (window.decorView as FrameLayout).addView(view)
         view.layoutParams = FrameLayout.LayoutParams(500, 500)
+    }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.d("datadata", "ggggg")
+        if (resultCode == 1111) {
+            Log.d("datadata", data!!.getStringExtra("goIntent"))
+        }
     }
 }

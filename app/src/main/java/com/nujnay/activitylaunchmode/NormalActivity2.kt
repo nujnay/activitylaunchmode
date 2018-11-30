@@ -24,6 +24,10 @@ class NormalActivity2 : Activity() {
     override fun onResume() {
         super.onResume()
         Log.d("LaunchModeLaunchMode", "NormalActivity1" + "::" + "onResume")
-        startActivity(Intent(this@NormalActivity2, SingleTaskActivity::class.java))
+//        startActivity(Intent(this@NormalActivity2, SingleTaskActivity::class.java))
+        var goIntent = Intent()
+        goIntent.putExtra("goIntent", "goIntent")
+        setResult(1111, goIntent)
+        finish()
     }
 }

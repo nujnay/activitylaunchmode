@@ -25,5 +25,8 @@ class NormalActivity1 : Activity() {
         super.onResume()
         Log.d("LaunchModeLaunchMode", "NormalActivity1" + "::" + "onResume")
         startActivity(Intent(this@NormalActivity1, NormalActivity2::class.java))
+        finish()
     }
+
+
 }
