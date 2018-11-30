@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.FrameLayout
 
 class SingleTaskActivity : Activity() {
@@ -25,6 +26,12 @@ class SingleTaskActivity : Activity() {
     override fun onResume() {
         super.onResume()
         Log.d("LaunchModeLaunchMode", "SingleTaskActivity" + "::" + "onResume")
-        (window.decorView as FrameLayout).setOnClickListener { startActivity(Intent(this@SingleTaskActivity, NormalActivity1::class.java)) }
+        var view = View(this)
+        view.setOnClickListener {
+            startActivity(Intent(this@SingleTaskActivity, NormalActivity1::class.java))
+        }
+        (window.decorView as FrameLayout).addView(view)
+        view.layoutParams = FrameLayout.LayoutParams(500, 500)
+
     }
 }
